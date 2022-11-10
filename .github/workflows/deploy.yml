@@ -30,6 +30,11 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: App
+          path: dist
   deploy:
     needs: build
     runs-on: ubuntu-latest
